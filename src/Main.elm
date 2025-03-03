@@ -7,6 +7,8 @@ import FontAwesome exposing (icon, instagram, linkedIn)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
+import Ionicon
+import Ionicon.Social as Social
 import Page.Art as ArtPage
 import Page.Home as HomePage
 import Page.Music as MusicPage
@@ -167,6 +169,14 @@ renderTab model =
             MusicPage.view model
 
 
+type alias RGBA =
+    { red : Float
+    , green : Float
+    , blue : Float
+    , alpha : Float
+    }
+
+
 view : Model -> Browser.Document Msg
 view model =
     { title = "Apurav Khare"
@@ -221,12 +231,16 @@ view model =
                     , style "margin-right" "1.5em"
                     ]
                     [ text "–" ]
-                , span []
+                , span
+                    [ style "display" "inline-flex"
+                    , style "align-items" "center"
+                    , style "gap" "5px"
+                    ]
                     [ text "Apurav Khare"
                     , a [ href "https://www.instagram.com/apurav.khare/" ]
-                        [ icon instagram ]
+                        [ Social.instagramOutline 20 (RGBA 0.36 0.37 0.38 1) ]
                     , a [ href "https://www.linkedin.com/in/apuravkhare/" ]
-                        [ icon linkedIn ]
+                        [ Social.linkedin 20 (RGBA 0.36 0.37 0.38 1) ]
                     ]
                 ]
             ]
