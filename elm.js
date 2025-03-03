@@ -6164,7 +6164,9 @@ var $author$project$Main$update = F2(
 		}
 	});
 var $author$project$Main$MidnightGreen = {$: 'MidnightGreen'};
+var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$html$Html$div = _VirtualDom_node('div');
+var $elm$html$Html$footer = _VirtualDom_node('footer');
 var $author$project$Main$getColor = function (c) {
 	switch (c.$) {
 		case 'RaisinBlack':
@@ -6179,6 +6181,387 @@ var $author$project$Main$getColor = function (c) {
 			return '#f15152';
 	}
 };
+var $elm$json$Json$Encode$string = _Json_wrap;
+var $elm$html$Html$Attributes$stringProperty = F2(
+	function (key, string) {
+		return A2(
+			_VirtualDom_property,
+			key,
+			$elm$json$Json$Encode$string(string));
+	});
+var $elm$html$Html$Attributes$href = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'href',
+		_VirtualDom_noJavaScriptUri(url));
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$Solid = {$: 'Solid'};
+var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
+var $elm$core$List$filter = F2(
+	function (isGood, list) {
+		return A3(
+			$elm$core$List$foldr,
+			F2(
+				function (x, xs) {
+					return isGood(x) ? A2($elm$core$List$cons, x, xs) : xs;
+				}),
+			_List_Nil,
+			list);
+	});
+var $elm$core$Tuple$second = function (_v0) {
+	var y = _v0.b;
+	return y;
+};
+var $elm$html$Html$Attributes$classList = function (classes) {
+	return $elm$html$Html$Attributes$class(
+		A2(
+			$elm$core$String$join,
+			' ',
+			A2(
+				$elm$core$List$map,
+				$elm$core$Tuple$first,
+				A2($elm$core$List$filter, $elm$core$Tuple$second, classes))));
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$animationClass = function (animation) {
+	if (animation.$ === 'Spin') {
+		return 'fa-spin';
+	} else {
+		return 'fa-pulse';
+	}
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$borderClass = 'fa-border';
+var $frandibar$elm_font_awesome_5$FontAwesome$invertClass = 'fa-inverse';
+var $frandibar$elm_font_awesome_5$FontAwesome$pullClass = function (p) {
+	if (p.$ === 'Left') {
+		return 'fa-pull-left';
+	} else {
+		return 'fa-pull-right';
+	}
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$sizeClass = function (size) {
+	switch (size.$) {
+		case 'ExtraSmall':
+			return 'fa-xs';
+		case 'Small':
+			return 'fa-sm';
+		case 'Large':
+			return 'fa-lg';
+		default:
+			var n = size.a;
+			return 'fa-' + ($elm$core$String$fromInt(n) + 'x');
+	}
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$widthClass = 'fa-fw';
+var $frandibar$elm_font_awesome_5$FontAwesome$className = function (opt) {
+	switch (opt.$) {
+		case 'Animation':
+			var animation = opt.a;
+			return _Utils_Tuple2(
+				$frandibar$elm_font_awesome_5$FontAwesome$animationClass(animation),
+				true);
+		case 'HasBorder':
+			return _Utils_Tuple2($frandibar$elm_font_awesome_5$FontAwesome$borderClass, true);
+		case 'HasFixedWidth':
+			return _Utils_Tuple2($frandibar$elm_font_awesome_5$FontAwesome$widthClass, true);
+		case 'InvertColor':
+			return _Utils_Tuple2($frandibar$elm_font_awesome_5$FontAwesome$invertClass, true);
+		case 'Pull':
+			var direction = opt.a;
+			return _Utils_Tuple2(
+				$frandibar$elm_font_awesome_5$FontAwesome$pullClass(direction),
+				true);
+		case 'Size':
+			var size = opt.a;
+			return _Utils_Tuple2(
+				$frandibar$elm_font_awesome_5$FontAwesome$sizeClass(size),
+				true);
+		default:
+			return _Utils_Tuple2('', false);
+	}
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$iconClass = function (iconOrLogo) {
+	var root = function () {
+		if (iconOrLogo.$ === 'Icon') {
+			var name = iconOrLogo.a;
+			return name;
+		} else {
+			var name = iconOrLogo.a;
+			return name;
+		}
+	}();
+	return 'fa-' + root;
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$styleClass = F2(
+	function (iconOrLogo, style) {
+		if (iconOrLogo.$ === 'Logo') {
+			return 'fab';
+		} else {
+			switch (style.$) {
+				case 'Solid':
+					return 'fas';
+				case 'Regular':
+					return 'far';
+				default:
+					return 'fal';
+			}
+		}
+	});
+var $frandibar$elm_font_awesome_5$FontAwesome$classes = F3(
+	function (iconUnstyled, style, options) {
+		return $elm$html$Html$Attributes$classList(
+			A2(
+				$elm$core$List$cons,
+				_Utils_Tuple2(
+					A2($frandibar$elm_font_awesome_5$FontAwesome$styleClass, iconUnstyled, style),
+					true),
+				A2(
+					$elm$core$List$cons,
+					_Utils_Tuple2(
+						$frandibar$elm_font_awesome_5$FontAwesome$iconClass(iconUnstyled),
+						true),
+					A2($elm$core$List$map, $frandibar$elm_font_awesome_5$FontAwesome$className, options))));
+	});
+var $frandibar$elm_font_awesome_5$FontAwesome$Utils$onlyOne = F3(
+	function (f, curr, _v0) {
+		var found = _v0.a;
+		var list = _v0.b;
+		var _v1 = _Utils_Tuple2(
+			f(curr),
+			found);
+		if (_v1.a) {
+			if (!_v1.b) {
+				return _Utils_Tuple2(
+					true,
+					A2($elm$core$List$cons, curr, list));
+			} else {
+				return _Utils_Tuple2(found, list);
+			}
+		} else {
+			return _Utils_Tuple2(
+				found,
+				A2($elm$core$List$cons, curr, list));
+		}
+	});
+var $frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup = F2(
+	function (f, list) {
+		return A3(
+			$elm$core$List$foldr,
+			$frandibar$elm_font_awesome_5$FontAwesome$Utils$onlyOne(f),
+			_Utils_Tuple2(false, _List_Nil),
+			list).b;
+	});
+var $frandibar$elm_font_awesome_5$FontAwesome$isAnimation = function (option) {
+	if (option.$ === 'Animation') {
+		return true;
+	} else {
+		return false;
+	}
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$isBorder = function (option) {
+	if (option.$ === 'HasBorder') {
+		return true;
+	} else {
+		return false;
+	}
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$isHtmlTag = function (option) {
+	if (option.$ === 'HtmlTag') {
+		return true;
+	} else {
+		return false;
+	}
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$isInvertColor = function (option) {
+	if (option.$ === 'InvertColor') {
+		return true;
+	} else {
+		return false;
+	}
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$isMask = function (option) {
+	if (option.$ === 'Mask') {
+		return true;
+	} else {
+		return false;
+	}
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$isPull = function (option) {
+	if (option.$ === 'Pull') {
+		return true;
+	} else {
+		return false;
+	}
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$isSize = function (option) {
+	if (option.$ === 'Size') {
+		return true;
+	} else {
+		return false;
+	}
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$isTransform = function (option) {
+	if (option.$ === 'Transform') {
+		return true;
+	} else {
+		return false;
+	}
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$isWidth = function (option) {
+	if (option.$ === 'HasFixedWidth') {
+		return true;
+	} else {
+		return false;
+	}
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$filterAttrs = function (options) {
+	return A2(
+		$frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup,
+		$frandibar$elm_font_awesome_5$FontAwesome$isWidth,
+		A2(
+			$frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup,
+			$frandibar$elm_font_awesome_5$FontAwesome$isTransform,
+			A2(
+				$frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup,
+				$frandibar$elm_font_awesome_5$FontAwesome$isSize,
+				A2(
+					$frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup,
+					$frandibar$elm_font_awesome_5$FontAwesome$isPull,
+					A2(
+						$frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup,
+						$frandibar$elm_font_awesome_5$FontAwesome$isMask,
+						A2(
+							$frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup,
+							$frandibar$elm_font_awesome_5$FontAwesome$isInvertColor,
+							A2(
+								$frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup,
+								$frandibar$elm_font_awesome_5$FontAwesome$isHtmlTag,
+								A2(
+									$frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup,
+									$frandibar$elm_font_awesome_5$FontAwesome$isBorder,
+									A2($frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup, $frandibar$elm_font_awesome_5$FontAwesome$isAnimation, options)))))))));
+};
+var $elm$virtual_dom$VirtualDom$attribute = F2(
+	function (key, value) {
+		return A2(
+			_VirtualDom_attribute,
+			_VirtualDom_noOnOrFormAction(key),
+			_VirtualDom_noJavaScriptOrHtmlUri(value));
+	});
+var $elm$html$Html$Attributes$attribute = $elm$virtual_dom$VirtualDom$attribute;
+var $frandibar$elm_font_awesome_5$FontAwesome$mask = F2(
+	function (opt, opts) {
+		if (opt.$ === 'Mask') {
+			var maskIcon = opt.a;
+			var style = opt.b;
+			var val = A2($frandibar$elm_font_awesome_5$FontAwesome$styleClass, maskIcon, style) + (' ' + $frandibar$elm_font_awesome_5$FontAwesome$iconClass(maskIcon));
+			return A2(
+				$elm$core$List$cons,
+				A2($elm$html$Html$Attributes$attribute, 'data-fa-mask', val),
+				opts);
+		} else {
+			return opts;
+		}
+	});
+var $frandibar$elm_font_awesome_5$FontAwesome$maskAttr = function (options) {
+	return A3($elm$core$List$foldr, $frandibar$elm_font_awesome_5$FontAwesome$mask, _List_Nil, options);
+};
+var $elm$core$String$fromFloat = _String_fromNumber;
+var $frandibar$elm_font_awesome_5$FontAwesome$transformVal = function (transformValue) {
+	switch (transformValue.$) {
+		case 'Grow':
+			var n = transformValue.a;
+			return 'grow-' + $elm$core$String$fromFloat(n);
+		case 'Shrink':
+			var n = transformValue.a;
+			return 'shrink-' + $elm$core$String$fromFloat(n);
+		case 'ShiftDown':
+			var n = transformValue.a;
+			return 'down-' + $elm$core$String$fromFloat(n);
+		case 'ShiftLeft':
+			var n = transformValue.a;
+			return 'left-' + $elm$core$String$fromFloat(n);
+		case 'ShiftRight':
+			var n = transformValue.a;
+			return 'right-' + $elm$core$String$fromFloat(n);
+		case 'ShiftUp':
+			var n = transformValue.a;
+			return 'up-' + $elm$core$String$fromFloat(n);
+		case 'Rotate':
+			var n = transformValue.a;
+			return 'rotate-' + $elm$core$String$fromFloat(n);
+		case 'FlipHorizontal':
+			return 'flip-h';
+		default:
+			return 'flip-v';
+	}
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$transform = F2(
+	function (opt, opts) {
+		if (opt.$ === 'Transform') {
+			var transforms = opt.a;
+			var val = A2(
+				$elm$core$String$join,
+				' ',
+				A2($elm$core$List$map, $frandibar$elm_font_awesome_5$FontAwesome$transformVal, transforms));
+			return A2(
+				$elm$core$List$cons,
+				A2($elm$html$Html$Attributes$attribute, 'data-fa-transform', val),
+				opts);
+		} else {
+			return opts;
+		}
+	});
+var $frandibar$elm_font_awesome_5$FontAwesome$transformAttr = function (options) {
+	return A3($elm$core$List$foldr, $frandibar$elm_font_awesome_5$FontAwesome$transform, _List_Nil, options);
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$htmlAttrs = F2(
+	function (options, htmlAttributes) {
+		return _Utils_ap(
+			$frandibar$elm_font_awesome_5$FontAwesome$transformAttr(options),
+			_Utils_ap(
+				$frandibar$elm_font_awesome_5$FontAwesome$maskAttr(options),
+				htmlAttributes));
+	});
+var $frandibar$elm_font_awesome_5$FontAwesome$I = {$: 'I'};
+var $frandibar$elm_font_awesome_5$FontAwesome$findTag = F2(
+	function (option, previousTag) {
+		if (option.$ === 'HtmlTag') {
+			var newTag = option.a;
+			return newTag;
+		} else {
+			return previousTag;
+		}
+	});
+var $elm$html$Html$i = _VirtualDom_node('i');
+var $elm$html$Html$span = _VirtualDom_node('span');
+var $frandibar$elm_font_awesome_5$FontAwesome$htmlTag = function (opts) {
+	var foundTag = A3($elm$core$List$foldl, $frandibar$elm_font_awesome_5$FontAwesome$findTag, $frandibar$elm_font_awesome_5$FontAwesome$I, opts);
+	if (foundTag.$ === 'I') {
+		return $elm$html$Html$i;
+	} else {
+		return $elm$html$Html$span;
+	}
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$iconWithOptions = F4(
+	function (iconName, style, options, htmlAttributes) {
+		var opts = $frandibar$elm_font_awesome_5$FontAwesome$filterAttrs(options);
+		return A3(
+			$frandibar$elm_font_awesome_5$FontAwesome$htmlTag,
+			opts,
+			A2(
+				$elm$core$List$cons,
+				A3($frandibar$elm_font_awesome_5$FontAwesome$classes, iconName, style, opts),
+				A2($frandibar$elm_font_awesome_5$FontAwesome$htmlAttrs, opts, htmlAttributes)),
+			_List_Nil);
+	});
+var $frandibar$elm_font_awesome_5$FontAwesome$icon = function (iconName) {
+	return A4($frandibar$elm_font_awesome_5$FontAwesome$iconWithOptions, iconName, $frandibar$elm_font_awesome_5$FontAwesome$Solid, _List_Nil, _List_Nil);
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$Icon$Logo = function (a) {
+	return {$: 'Logo', a: a};
+};
+var $frandibar$elm_font_awesome_5$FontAwesome$instagram = $frandibar$elm_font_awesome_5$FontAwesome$Icon$Logo('instagram');
+var $frandibar$elm_font_awesome_5$FontAwesome$linkedIn = $frandibar$elm_font_awesome_5$FontAwesome$Icon$Logo('linkedin');
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
 var $author$project$Page$Art$artToEmbed = _List_fromArray(
@@ -9780,14 +10163,6 @@ var $elm$virtual_dom$VirtualDom$node = function (tag) {
 		_VirtualDom_noScript(tag));
 };
 var $elm$html$Html$node = $elm$virtual_dom$VirtualDom$node;
-var $elm$virtual_dom$VirtualDom$attribute = F2(
-	function (key, value) {
-		return A2(
-			_VirtualDom_attribute,
-			_VirtualDom_noOnOrFormAction(key),
-			_VirtualDom_noJavaScriptOrHtmlUri(value));
-	});
-var $elm$html$Html$Attributes$attribute = $elm$virtual_dom$VirtualDom$attribute;
 var $hecrj$html_parser$Html$Parser$Util$toAttribute = function (_v0) {
 	var name = _v0.a;
 	var value = _v0.b;
@@ -9908,14 +10283,6 @@ var $bellroy$elm_embed_youtube$Embed$Youtube$Internal$Attribute$Height = functio
 };
 var $bellroy$elm_embed_youtube$Embed$Youtube$Attributes$height = $bellroy$elm_embed_youtube$Embed$Youtube$Internal$Attribute$Height;
 var $elm$html$Html$iframe = _VirtualDom_node('iframe');
-var $elm$json$Json$Encode$string = _Json_wrap;
-var $elm$html$Html$Attributes$stringProperty = F2(
-	function (key, string) {
-		return A2(
-			_VirtualDom_property,
-			key,
-			$elm$json$Json$Encode$string(string));
-	});
 var $elm$html$Html$Attributes$src = function (url) {
 	return A2(
 		$elm$html$Html$Attributes$stringProperty,
@@ -10214,15 +10581,7 @@ var $author$project$Main$renderTab = function (model) {
 			return $author$project$Page$Music$view(model);
 	}
 };
-var $elm$html$Html$span = _VirtualDom_node('span');
 var $author$project$Main$PaleDogwood = {$: 'PaleDogwood'};
-var $elm$html$Html$a = _VirtualDom_node('a');
-var $elm$html$Html$Attributes$href = function (url) {
-	return A2(
-		$elm$html$Html$Attributes$stringProperty,
-		'href',
-		_VirtualDom_noJavaScriptUri(url));
-};
 var $author$project$Main$viewLink = F3(
 	function (model, tab, path) {
 		return A2(
@@ -10256,7 +10615,10 @@ var $author$project$Main$view = function (model) {
 				_List_fromArray(
 					[
 						A2($elm$html$Html$Attributes$style, 'font-family', 'monospace'),
-						A2($elm$html$Html$Attributes$style, 'background-color', '#FEFEFE')
+						A2($elm$html$Html$Attributes$style, 'background-color', '#FEFEFE'),
+						A2($elm$html$Html$Attributes$style, 'display', 'grid'),
+						A2($elm$html$Html$Attributes$style, 'grid-template-rows', 'auto 1fr auto'),
+						A2($elm$html$Html$Attributes$style, 'height', '100vh')
 					]),
 				_List_fromArray(
 					[
@@ -10305,7 +10667,68 @@ var $author$project$Main$view = function (model) {
 										A3($author$project$Main$viewLink, model, $author$project$Main$Music, '/music')
 									]))
 							])),
-						$author$project$Main$renderTab(model)
+						$author$project$Main$renderTab(model),
+						A2(
+						$elm$html$Html$footer,
+						_List_fromArray(
+							[
+								A2($elm$html$Html$Attributes$style, 'border-top', '1px solid #eeeeee'),
+								A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
+								A2($elm$html$Html$Attributes$style, 'padding', '2em'),
+								A2($elm$html$Html$Attributes$style, 'color', 'darkgrey')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$a,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$href('https://github.com/apuravkhare/akhare'),
+										A2($elm$html$Html$Attributes$style, 'color', 'darkgrey')
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Site source')
+									])),
+								A2(
+								$elm$html$Html$span,
+								_List_fromArray(
+									[
+										A2($elm$html$Html$Attributes$style, 'margin-left', '1.5em'),
+										A2($elm$html$Html$Attributes$style, 'margin-right', '1.5em')
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('–')
+									])),
+								A2(
+								$elm$html$Html$span,
+								_List_Nil,
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Apurav Khare'),
+										A2(
+										$elm$html$Html$a,
+										_List_fromArray(
+											[
+												$elm$html$Html$Attributes$href('https://www.instagram.com/apurav.khare/')
+											]),
+										_List_fromArray(
+											[
+												$frandibar$elm_font_awesome_5$FontAwesome$icon($frandibar$elm_font_awesome_5$FontAwesome$instagram)
+											])),
+										A2(
+										$elm$html$Html$a,
+										_List_fromArray(
+											[
+												$elm$html$Html$Attributes$href('https://www.linkedin.com/in/apuravkhare/')
+											]),
+										_List_fromArray(
+											[
+												$frandibar$elm_font_awesome_5$FontAwesome$icon($frandibar$elm_font_awesome_5$FontAwesome$linkedIn)
+											]))
+									]))
+							]))
 					]))
 			]),
 		title: 'Apurav Khare'

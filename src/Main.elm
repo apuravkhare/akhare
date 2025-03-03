@@ -3,6 +3,7 @@ module Main exposing (..)
 import Browser
 import Browser.Navigation as Nav
 import Css exposing (..)
+import FontAwesome exposing (icon, instagram, linkedIn)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
@@ -170,8 +171,13 @@ view : Model -> Browser.Document Msg
 view model =
     { title = "Apurav Khare"
     , body =
-        [ div [ style "font-family" "monospace"
-              , style "background-color" "#FEFEFE" ]
+        [ div
+            [ style "font-family" "monospace"
+            , style "background-color" "#FEFEFE"
+            , style "display" "grid"
+            , style "grid-template-rows" "auto 1fr auto"
+            , style "height" "100vh"
+            ]
             [ div
                 [ style "height" "50px"
                 , style "display" "flex"
@@ -183,7 +189,7 @@ view model =
                 , style "top" "0"
                 , style "z-index" "1"
                 ]
-                [ span [style "font-size" "large"]
+                [ span [ style "font-size" "large" ]
                     [ text "Apurav Khare" ]
                 , div
                     [ style "display" "flex"
@@ -197,6 +203,32 @@ view model =
                     ]
                 ]
             , renderTab model
+            , footer
+                [ style "border-top" "1px solid #eeeeee"
+                , style "text-align" "center"
+                , style "padding" "2em"
+
+                -- , style "margin" "4em"
+                , style "color" "darkgrey"
+                ]
+                [ a
+                    [ href """https://github.com/apuravkhare/akhare"""
+                    , style "color" "darkgrey"
+                    ]
+                    [ text "Site source" ]
+                , span
+                    [ style "margin-left" "1.5em"
+                    , style "margin-right" "1.5em"
+                    ]
+                    [ text "–" ]
+                , span []
+                    [ text "Apurav Khare"
+                    , a [ href "https://www.instagram.com/apurav.khare/" ]
+                        [ icon instagram ]
+                    , a [ href "https://www.linkedin.com/in/apuravkhare/" ]
+                        [ icon linkedIn ]
+                    ]
+                ]
             ]
         ]
     }
@@ -221,4 +253,3 @@ viewLink model tab path =
             ]
             [ text path ]
         ]
-
