@@ -6164,6 +6164,10 @@ var $author$project$Main$update = F2(
 		}
 	});
 var $author$project$Main$MidnightGreen = {$: 'MidnightGreen'};
+var $author$project$Main$RGBA = F4(
+	function (red, green, blue, alpha) {
+		return {alpha: alpha, blue: blue, green: green, red: red};
+	});
 var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$html$Html$div = _VirtualDom_node('div');
 var $elm$html$Html$footer = _VirtualDom_node('footer');
@@ -6195,373 +6199,97 @@ var $elm$html$Html$Attributes$href = function (url) {
 		'href',
 		_VirtualDom_noJavaScriptUri(url));
 };
-var $frandibar$elm_font_awesome_5$FontAwesome$Solid = {$: 'Solid'};
-var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
-var $elm$core$List$filter = F2(
-	function (isGood, list) {
-		return A3(
-			$elm$core$List$foldr,
-			F2(
-				function (x, xs) {
-					return isGood(x) ? A2($elm$core$List$cons, x, xs) : xs;
-				}),
-			_List_Nil,
-			list);
+var $elm$svg$Svg$Attributes$d = _VirtualDom_attribute('d');
+var $elm$core$Basics$clamp = F3(
+	function (low, high, number) {
+		return (_Utils_cmp(number, low) < 0) ? low : ((_Utils_cmp(number, high) > 0) ? high : number);
 	});
-var $elm$core$Tuple$second = function (_v0) {
-	var y = _v0.b;
-	return y;
-};
-var $elm$html$Html$Attributes$classList = function (classes) {
-	return $elm$html$Html$Attributes$class(
-		A2(
-			$elm$core$String$join,
-			' ',
-			A2(
-				$elm$core$List$map,
-				$elm$core$Tuple$first,
-				A2($elm$core$List$filter, $elm$core$Tuple$second, classes))));
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$animationClass = function (animation) {
-	if (animation.$ === 'Spin') {
-		return 'fa-spin';
-	} else {
-		return 'fa-pulse';
-	}
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$borderClass = 'fa-border';
-var $frandibar$elm_font_awesome_5$FontAwesome$invertClass = 'fa-inverse';
-var $frandibar$elm_font_awesome_5$FontAwesome$pullClass = function (p) {
-	if (p.$ === 'Left') {
-		return 'fa-pull-left';
-	} else {
-		return 'fa-pull-right';
-	}
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$sizeClass = function (size) {
-	switch (size.$) {
-		case 'ExtraSmall':
-			return 'fa-xs';
-		case 'Small':
-			return 'fa-sm';
-		case 'Large':
-			return 'fa-lg';
-		default:
-			var n = size.a;
-			return 'fa-' + ($elm$core$String$fromInt(n) + 'x');
-	}
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$widthClass = 'fa-fw';
-var $frandibar$elm_font_awesome_5$FontAwesome$className = function (opt) {
-	switch (opt.$) {
-		case 'Animation':
-			var animation = opt.a;
-			return _Utils_Tuple2(
-				$frandibar$elm_font_awesome_5$FontAwesome$animationClass(animation),
-				true);
-		case 'HasBorder':
-			return _Utils_Tuple2($frandibar$elm_font_awesome_5$FontAwesome$borderClass, true);
-		case 'HasFixedWidth':
-			return _Utils_Tuple2($frandibar$elm_font_awesome_5$FontAwesome$widthClass, true);
-		case 'InvertColor':
-			return _Utils_Tuple2($frandibar$elm_font_awesome_5$FontAwesome$invertClass, true);
-		case 'Pull':
-			var direction = opt.a;
-			return _Utils_Tuple2(
-				$frandibar$elm_font_awesome_5$FontAwesome$pullClass(direction),
-				true);
-		case 'Size':
-			var size = opt.a;
-			return _Utils_Tuple2(
-				$frandibar$elm_font_awesome_5$FontAwesome$sizeClass(size),
-				true);
-		default:
-			return _Utils_Tuple2('', false);
-	}
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$iconClass = function (iconOrLogo) {
-	var root = function () {
-		if (iconOrLogo.$ === 'Icon') {
-			var name = iconOrLogo.a;
-			return name;
-		} else {
-			var name = iconOrLogo.a;
-			return name;
-		}
-	}();
-	return 'fa-' + root;
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$styleClass = F2(
-	function (iconOrLogo, style) {
-		if (iconOrLogo.$ === 'Logo') {
-			return 'fab';
-		} else {
-			switch (style.$) {
-				case 'Solid':
-					return 'fas';
-				case 'Regular':
-					return 'far';
-				default:
-					return 'fal';
-			}
-		}
-	});
-var $frandibar$elm_font_awesome_5$FontAwesome$classes = F3(
-	function (iconUnstyled, style, options) {
-		return $elm$html$Html$Attributes$classList(
-			A2(
-				$elm$core$List$cons,
-				_Utils_Tuple2(
-					A2($frandibar$elm_font_awesome_5$FontAwesome$styleClass, iconUnstyled, style),
-					true),
-				A2(
-					$elm$core$List$cons,
-					_Utils_Tuple2(
-						$frandibar$elm_font_awesome_5$FontAwesome$iconClass(iconUnstyled),
-						true),
-					A2($elm$core$List$map, $frandibar$elm_font_awesome_5$FontAwesome$className, options))));
-	});
-var $frandibar$elm_font_awesome_5$FontAwesome$Utils$onlyOne = F3(
-	function (f, curr, _v0) {
-		var found = _v0.a;
-		var list = _v0.b;
-		var _v1 = _Utils_Tuple2(
-			f(curr),
-			found);
-		if (_v1.a) {
-			if (!_v1.b) {
-				return _Utils_Tuple2(
-					true,
-					A2($elm$core$List$cons, curr, list));
-			} else {
-				return _Utils_Tuple2(found, list);
-			}
-		} else {
-			return _Utils_Tuple2(
-				found,
-				A2($elm$core$List$cons, curr, list));
-		}
-	});
-var $frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup = F2(
-	function (f, list) {
-		return A3(
-			$elm$core$List$foldr,
-			$frandibar$elm_font_awesome_5$FontAwesome$Utils$onlyOne(f),
-			_Utils_Tuple2(false, _List_Nil),
-			list).b;
-	});
-var $frandibar$elm_font_awesome_5$FontAwesome$isAnimation = function (option) {
-	if (option.$ === 'Animation') {
-		return true;
-	} else {
-		return false;
-	}
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$isBorder = function (option) {
-	if (option.$ === 'HasBorder') {
-		return true;
-	} else {
-		return false;
-	}
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$isHtmlTag = function (option) {
-	if (option.$ === 'HtmlTag') {
-		return true;
-	} else {
-		return false;
-	}
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$isInvertColor = function (option) {
-	if (option.$ === 'InvertColor') {
-		return true;
-	} else {
-		return false;
-	}
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$isMask = function (option) {
-	if (option.$ === 'Mask') {
-		return true;
-	} else {
-		return false;
-	}
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$isPull = function (option) {
-	if (option.$ === 'Pull') {
-		return true;
-	} else {
-		return false;
-	}
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$isSize = function (option) {
-	if (option.$ === 'Size') {
-		return true;
-	} else {
-		return false;
-	}
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$isTransform = function (option) {
-	if (option.$ === 'Transform') {
-		return true;
-	} else {
-		return false;
-	}
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$isWidth = function (option) {
-	if (option.$ === 'HasFixedWidth') {
-		return true;
-	} else {
-		return false;
-	}
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$filterAttrs = function (options) {
-	return A2(
-		$frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup,
-		$frandibar$elm_font_awesome_5$FontAwesome$isWidth,
-		A2(
-			$frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup,
-			$frandibar$elm_font_awesome_5$FontAwesome$isTransform,
-			A2(
-				$frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup,
-				$frandibar$elm_font_awesome_5$FontAwesome$isSize,
-				A2(
-					$frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup,
-					$frandibar$elm_font_awesome_5$FontAwesome$isPull,
-					A2(
-						$frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup,
-						$frandibar$elm_font_awesome_5$FontAwesome$isMask,
-						A2(
-							$frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup,
-							$frandibar$elm_font_awesome_5$FontAwesome$isInvertColor,
-							A2(
-								$frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup,
-								$frandibar$elm_font_awesome_5$FontAwesome$isHtmlTag,
-								A2(
-									$frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup,
-									$frandibar$elm_font_awesome_5$FontAwesome$isBorder,
-									A2($frandibar$elm_font_awesome_5$FontAwesome$Utils$dedup, $frandibar$elm_font_awesome_5$FontAwesome$isAnimation, options)))))))));
-};
-var $elm$virtual_dom$VirtualDom$attribute = F2(
-	function (key, value) {
-		return A2(
-			_VirtualDom_attribute,
-			_VirtualDom_noOnOrFormAction(key),
-			_VirtualDom_noJavaScriptOrHtmlUri(value));
-	});
-var $elm$html$Html$Attributes$attribute = $elm$virtual_dom$VirtualDom$attribute;
-var $frandibar$elm_font_awesome_5$FontAwesome$mask = F2(
-	function (opt, opts) {
-		if (opt.$ === 'Mask') {
-			var maskIcon = opt.a;
-			var style = opt.b;
-			var val = A2($frandibar$elm_font_awesome_5$FontAwesome$styleClass, maskIcon, style) + (' ' + $frandibar$elm_font_awesome_5$FontAwesome$iconClass(maskIcon));
-			return A2(
-				$elm$core$List$cons,
-				A2($elm$html$Html$Attributes$attribute, 'data-fa-mask', val),
-				opts);
-		} else {
-			return opts;
-		}
-	});
-var $frandibar$elm_font_awesome_5$FontAwesome$maskAttr = function (options) {
-	return A3($elm$core$List$foldr, $frandibar$elm_font_awesome_5$FontAwesome$mask, _List_Nil, options);
-};
 var $elm$core$String$fromFloat = _String_fromNumber;
-var $frandibar$elm_font_awesome_5$FontAwesome$transformVal = function (transformValue) {
-	switch (transformValue.$) {
-		case 'Grow':
-			var n = transformValue.a;
-			return 'grow-' + $elm$core$String$fromFloat(n);
-		case 'Shrink':
-			var n = transformValue.a;
-			return 'shrink-' + $elm$core$String$fromFloat(n);
-		case 'ShiftDown':
-			var n = transformValue.a;
-			return 'down-' + $elm$core$String$fromFloat(n);
-		case 'ShiftLeft':
-			var n = transformValue.a;
-			return 'left-' + $elm$core$String$fromFloat(n);
-		case 'ShiftRight':
-			var n = transformValue.a;
-			return 'right-' + $elm$core$String$fromFloat(n);
-		case 'ShiftUp':
-			var n = transformValue.a;
-			return 'up-' + $elm$core$String$fromFloat(n);
-		case 'Rotate':
-			var n = transformValue.a;
-			return 'rotate-' + $elm$core$String$fromFloat(n);
-		case 'FlipHorizontal':
-			return 'flip-h';
-		default:
-			return 'flip-v';
-	}
+var $j_panasiuk$elm_ionicons$Ionicon$Internal$toAlphaString = function (value) {
+	return A2(
+		$elm$core$String$left,
+		5,
+		$elm$core$String$fromFloat(
+			A3($elm$core$Basics$clamp, 0, 1, value)));
 };
-var $frandibar$elm_font_awesome_5$FontAwesome$transform = F2(
-	function (opt, opts) {
-		if (opt.$ === 'Transform') {
-			var transforms = opt.a;
-			var val = A2(
-				$elm$core$String$join,
-				' ',
-				A2($elm$core$List$map, $frandibar$elm_font_awesome_5$FontAwesome$transformVal, transforms));
-			return A2(
-				$elm$core$List$cons,
-				A2($elm$html$Html$Attributes$attribute, 'data-fa-transform', val),
-				opts);
-		} else {
-			return opts;
-		}
+var $j_panasiuk$elm_ionicons$Ionicon$Internal$toColorString = function (value) {
+	return A2(
+		$elm$core$String$left,
+		5,
+		$elm$core$String$fromFloat(
+			A3($elm$core$Basics$clamp, 0, 255, 255 * value)));
+};
+var $j_panasiuk$elm_ionicons$Ionicon$Internal$fill = function (_v0) {
+	var red = _v0.red;
+	var green = _v0.green;
+	var blue = _v0.blue;
+	var alpha = _v0.alpha;
+	var _v1 = ((0 <= alpha) && (alpha < 1)) ? _Utils_Tuple2(
+		'rgba',
+		_List_fromArray(
+			[
+				$j_panasiuk$elm_ionicons$Ionicon$Internal$toColorString(red),
+				$j_panasiuk$elm_ionicons$Ionicon$Internal$toColorString(green),
+				$j_panasiuk$elm_ionicons$Ionicon$Internal$toColorString(blue),
+				$j_panasiuk$elm_ionicons$Ionicon$Internal$toAlphaString(alpha)
+			])) : _Utils_Tuple2(
+		'rgb',
+		_List_fromArray(
+			[
+				$j_panasiuk$elm_ionicons$Ionicon$Internal$toColorString(red),
+				$j_panasiuk$elm_ionicons$Ionicon$Internal$toColorString(green),
+				$j_panasiuk$elm_ionicons$Ionicon$Internal$toColorString(blue)
+			]));
+	var colorSpace = _v1.a;
+	var values = _v1.b;
+	return colorSpace + ('(' + (A2($elm$core$String$join, ',', values) + ')'));
+};
+var $elm$svg$Svg$Attributes$fill = _VirtualDom_attribute('fill');
+var $elm$svg$Svg$trustedNode = _VirtualDom_nodeNS('http://www.w3.org/2000/svg');
+var $elm$svg$Svg$path = $elm$svg$Svg$trustedNode('path');
+var $elm$svg$Svg$Attributes$enableBackground = _VirtualDom_attribute('enable-background');
+var $elm$svg$Svg$Attributes$height = _VirtualDom_attribute('height');
+var $elm$svg$Svg$svg = $elm$svg$Svg$trustedNode('svg');
+var $elm$svg$Svg$Attributes$version = _VirtualDom_attribute('version');
+var $elm$svg$Svg$Attributes$viewBox = _VirtualDom_attribute('viewBox');
+var $elm$svg$Svg$Attributes$width = _VirtualDom_attribute('width');
+var $elm$svg$Svg$Attributes$x = _VirtualDom_attribute('x');
+var $elm$svg$Svg$Attributes$y = _VirtualDom_attribute('y');
+var $j_panasiuk$elm_ionicons$Ionicon$Internal$svg = function (size) {
+	return $elm$svg$Svg$svg(
+		_List_fromArray(
+			[
+				$elm$svg$Svg$Attributes$version('1.1'),
+				$elm$svg$Svg$Attributes$x('0px'),
+				$elm$svg$Svg$Attributes$y('0px'),
+				$elm$svg$Svg$Attributes$width(
+				$elm$core$String$fromInt(size)),
+				$elm$svg$Svg$Attributes$height(
+				$elm$core$String$fromInt(size)),
+				$elm$svg$Svg$Attributes$viewBox('0 0 512 512'),
+				$elm$svg$Svg$Attributes$enableBackground('new 0 0 512 512')
+			]));
+};
+var $j_panasiuk$elm_ionicons$Ionicon$Internal$p = F3(
+	function (d, size, color) {
+		return A2(
+			$j_panasiuk$elm_ionicons$Ionicon$Internal$svg,
+			size,
+			_List_fromArray(
+				[
+					A2(
+					$elm$svg$Svg$path,
+					_List_fromArray(
+						[
+							$elm$svg$Svg$Attributes$d(d),
+							$elm$svg$Svg$Attributes$fill(
+							$j_panasiuk$elm_ionicons$Ionicon$Internal$fill(color))
+						]),
+					_List_Nil)
+				]));
 	});
-var $frandibar$elm_font_awesome_5$FontAwesome$transformAttr = function (options) {
-	return A3($elm$core$List$foldr, $frandibar$elm_font_awesome_5$FontAwesome$transform, _List_Nil, options);
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$htmlAttrs = F2(
-	function (options, htmlAttributes) {
-		return _Utils_ap(
-			$frandibar$elm_font_awesome_5$FontAwesome$transformAttr(options),
-			_Utils_ap(
-				$frandibar$elm_font_awesome_5$FontAwesome$maskAttr(options),
-				htmlAttributes));
-	});
-var $frandibar$elm_font_awesome_5$FontAwesome$I = {$: 'I'};
-var $frandibar$elm_font_awesome_5$FontAwesome$findTag = F2(
-	function (option, previousTag) {
-		if (option.$ === 'HtmlTag') {
-			var newTag = option.a;
-			return newTag;
-		} else {
-			return previousTag;
-		}
-	});
-var $elm$html$Html$i = _VirtualDom_node('i');
-var $elm$html$Html$span = _VirtualDom_node('span');
-var $frandibar$elm_font_awesome_5$FontAwesome$htmlTag = function (opts) {
-	var foundTag = A3($elm$core$List$foldl, $frandibar$elm_font_awesome_5$FontAwesome$findTag, $frandibar$elm_font_awesome_5$FontAwesome$I, opts);
-	if (foundTag.$ === 'I') {
-		return $elm$html$Html$i;
-	} else {
-		return $elm$html$Html$span;
-	}
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$iconWithOptions = F4(
-	function (iconName, style, options, htmlAttributes) {
-		var opts = $frandibar$elm_font_awesome_5$FontAwesome$filterAttrs(options);
-		return A3(
-			$frandibar$elm_font_awesome_5$FontAwesome$htmlTag,
-			opts,
-			A2(
-				$elm$core$List$cons,
-				A3($frandibar$elm_font_awesome_5$FontAwesome$classes, iconName, style, opts),
-				A2($frandibar$elm_font_awesome_5$FontAwesome$htmlAttrs, opts, htmlAttributes)),
-			_List_Nil);
-	});
-var $frandibar$elm_font_awesome_5$FontAwesome$icon = function (iconName) {
-	return A4($frandibar$elm_font_awesome_5$FontAwesome$iconWithOptions, iconName, $frandibar$elm_font_awesome_5$FontAwesome$Solid, _List_Nil, _List_Nil);
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$Icon$Logo = function (a) {
-	return {$: 'Logo', a: a};
-};
-var $frandibar$elm_font_awesome_5$FontAwesome$instagram = $frandibar$elm_font_awesome_5$FontAwesome$Icon$Logo('instagram');
-var $frandibar$elm_font_awesome_5$FontAwesome$linkedIn = $frandibar$elm_font_awesome_5$FontAwesome$Icon$Logo('linkedin');
+var $j_panasiuk$elm_ionicons$Ionicon$Social$instagramOutline = $j_panasiuk$elm_ionicons$Ionicon$Internal$p('M448.5,112c0-26.233-21.267-47.5-47.5-47.5H112c-26.233,0-47.5,21.267-47.5,47.5v289 c0,26.233,21.267,47.5,47.5,47.5h289c26.233,0,47.5-21.267,47.5-47.5V112z M257,175.833c44.182,0,80,35.816,80,80s-35.818,80-80,80 s-80-35.816-80-80S212.818,175.833,257,175.833z M416.5,160.5c0,8.836-7.163,16-16,16h-48c-8.837,0-16-7.164-16-16v-48 c0-8.836,7.163-16,16-16h48c8.837,0,16,7.164,16,16V160.5z M401.5,416.5h-288c-8.822,0-17-8.178-17-17v-175h53.072 c-3.008,10-4.572,20.647-4.572,31.583C145,286,156.65,314,177.805,335.154s49.279,32.741,79.195,32.741s58.041-11.681,79.195-32.835 S369,286.016,369,256.099c0-10.936-1.563-21.599-4.572-31.599H416.5v175C416.5,408.322,410.322,416.5,401.5,416.5z');
+var $j_panasiuk$elm_ionicons$Ionicon$Social$linkedin = $j_panasiuk$elm_ionicons$Ionicon$Internal$p('M417.2,64H96.8C79.3,64,64,76.6,64,93.9v321.1c0,17.4,15.3,32.9,32.8,32.9h320.3c17.6,0,30.8-15.6,30.8-32.9V93.9C448,76.6,434.7,64,417.2,64zM183,384h-55V213h55V384zM157.4,187H157c-17.6,0-29-13.1-29-29.5c0-16.7,11.7-29.5,29.7-29.5c18,0,29,12.7,29.4,29.5C187.1,173.9,175.7,187,157.4,187zM384,384h-55v-93.5c0-22.4-8-37.7-27.9-37.7c-15.2,0-24.2,10.3-28.2,20.3c-1.5,3.6-1.9,8.5-1.9,13.5V384h-55V213h55v23.8c8-11.4,20.5-27.8,49.6-27.8c36.1,0,63.4,23.8,63.4,75.1V384z');
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
 var $author$project$Page$Art$artToEmbed = _List_fromArray(
@@ -10163,6 +9891,14 @@ var $elm$virtual_dom$VirtualDom$node = function (tag) {
 		_VirtualDom_noScript(tag));
 };
 var $elm$html$Html$node = $elm$virtual_dom$VirtualDom$node;
+var $elm$virtual_dom$VirtualDom$attribute = F2(
+	function (key, value) {
+		return A2(
+			_VirtualDom_attribute,
+			_VirtualDom_noOnOrFormAction(key),
+			_VirtualDom_noJavaScriptOrHtmlUri(value));
+	});
+var $elm$html$Html$Attributes$attribute = $elm$virtual_dom$VirtualDom$attribute;
 var $hecrj$html_parser$Html$Parser$Util$toAttribute = function (_v0) {
 	var name = _v0.a;
 	var value = _v0.b;
@@ -10581,6 +10317,7 @@ var $author$project$Main$renderTab = function (model) {
 			return $author$project$Page$Music$view(model);
 	}
 };
+var $elm$html$Html$span = _VirtualDom_node('span');
 var $author$project$Main$PaleDogwood = {$: 'PaleDogwood'};
 var $author$project$Main$viewLink = F3(
 	function (model, tab, path) {
@@ -10703,7 +10440,12 @@ var $author$project$Main$view = function (model) {
 									])),
 								A2(
 								$elm$html$Html$span,
-								_List_Nil,
+								_List_fromArray(
+									[
+										A2($elm$html$Html$Attributes$style, 'display', 'inline-flex'),
+										A2($elm$html$Html$Attributes$style, 'align-items', 'center'),
+										A2($elm$html$Html$Attributes$style, 'gap', '5px')
+									]),
 								_List_fromArray(
 									[
 										$elm$html$Html$text('Apurav Khare'),
@@ -10715,7 +10457,10 @@ var $author$project$Main$view = function (model) {
 											]),
 										_List_fromArray(
 											[
-												$frandibar$elm_font_awesome_5$FontAwesome$icon($frandibar$elm_font_awesome_5$FontAwesome$instagram)
+												A2(
+												$j_panasiuk$elm_ionicons$Ionicon$Social$instagramOutline,
+												20,
+												A4($author$project$Main$RGBA, 0.36, 0.37, 0.38, 1))
 											])),
 										A2(
 										$elm$html$Html$a,
@@ -10725,7 +10470,10 @@ var $author$project$Main$view = function (model) {
 											]),
 										_List_fromArray(
 											[
-												$frandibar$elm_font_awesome_5$FontAwesome$icon($frandibar$elm_font_awesome_5$FontAwesome$linkedIn)
+												A2(
+												$j_panasiuk$elm_ionicons$Ionicon$Social$linkedin,
+												20,
+												A4($author$project$Main$RGBA, 0.36, 0.37, 0.38, 1))
 											]))
 									]))
 							]))
