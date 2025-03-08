@@ -91,11 +91,11 @@ imageRender imgProps =
         [ a
             [ href imgProps.instagramUrl
             ]
-            [ img
-                [ src ("https://raw.githubusercontent.com/apuravkhare/akhare/refs/heads/main/images/" ++ imgProps.srcUrl)
-                , style "width" "500px"
+            [ div
+                [ style "background" ("url(" ++ "https://raw.githubusercontent.com/apuravkhare/akhare/refs/heads/main/images/" ++ imgProps.srcUrl ++ ") center / cover")
+                -- , style "width" "500px"
                 , style "height" "500px"
-                , style "object-fit" "cover"
+                -- , style "object-fit" "cover"
                 ]
                 []
             ]
@@ -105,11 +105,12 @@ imageRender imgProps =
 view model =
     div
         [ style "display" "grid"
-        , style "grid-template-columns" "auto auto auto"
+        , style "grid-template-columns" "1fr 1fr 1fr"
         , style "gap" "5px"
         , style "align-items" "center"
         , style "align-content" "center"
-        , style "justify-content" "center"
+        , style "justify-content" "center",
+        style "padding" "10px"
         ]
         (List.map imageRender imagesToEmbed)
 

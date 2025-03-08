@@ -58,7 +58,7 @@ separator : Html msg
 separator =
     hr
         [ style "width" "40%"
-        , style "opacity" "0.3"
+        , style "opacity" "0.5"
         ]
         []
 
