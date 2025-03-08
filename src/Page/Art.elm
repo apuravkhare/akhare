@@ -134,8 +134,8 @@ artToEmbed =
 
 imagesToEmbed : List Img
 imagesToEmbed =
-    [ { srcUrl = "../../images/IMG_20200103_175440-01.jpeg", instagramUrl = "https://www.instagram.com/p/B650oXaAN2B/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" }
-    , { srcUrl = "../../images/IMG_20200320_110742_944.jpg", instagramUrl = "https://www.instagram.com/p/B99bx_iHcS7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" }
-    , { srcUrl = "../../images/IMG_20190922_010652.jpg", instagramUrl = "https://www.instagram.com/p/B2t4kl8gQND/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" }
-    , { srcUrl = "../../images/IMG_20200514_200824-01.jpg", instagramUrl = "https://www.instagram.com/p/CAN9A1eneYY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" }
+    [ { srcUrl = "./images/IMG_20200103_175440-01.jpeg", instagramUrl = "https://www.instagram.com/p/B650oXaAN2B/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" }
+    , { srcUrl = "./images/IMG_20200320_110742_944.jpg", instagramUrl = "https://www.instagram.com/p/B99bx_iHcS7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" }
+    , { srcUrl = "./images/IMG_20190922_010652.jpg", instagramUrl = "https://www.instagram.com/p/B2t4kl8gQND/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" }
+    , { srcUrl = "./images/IMG_20200514_200824-01.jpg", instagramUrl = "https://www.instagram.com/p/CAN9A1eneYY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" }
     ]
