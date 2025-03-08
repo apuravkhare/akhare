@@ -12,6 +12,7 @@ import Ionicon.Social as Social
 import Page.Art as ArtPage
 import Page.Home as HomePage
 import Page.Music as MusicPage
+import Page.Code as CodePage
 import Url
 import Url.Parser exposing ((</>), Parser, int, map, oneOf, s, string)
 
@@ -124,7 +125,8 @@ update msg model =
         LinkClicked urlRequest ->
             case urlRequest of
                 Browser.Internal url ->
-                    ( model, Nav.pushUrl model.key (Url.toString url) )
+                    --( model, Nav.pushUrl model.key (Url.toString url) )
+                    changeUrl url model
 
                 Browser.External href ->
                     ( model, Nav.load href )
@@ -160,7 +162,7 @@ renderTab model =
             HomePage.view model
 
         Code ->
-            div [] [ text "code" ]
+            CodePage.view model
 
         Art ->
             ArtPage.view model
