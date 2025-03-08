@@ -46,7 +46,8 @@ view model =
 
 videosToEmbed : List String
 videosToEmbed =
-    [ "WPG8E6i1ETg"
+    [ "Y1LkX5tLHX0"
+    , "WPG8E6i1ETg"
     , "M0Xw676YueM"
     , "ep-hHNUR0Ls"
     , "WmBuwMcmi9A"

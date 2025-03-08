@@ -6189,8 +6189,10 @@ var $author$project$Page$Art$imageRender = function (imgProps) {
 						$elm$html$Html$img,
 						_List_fromArray(
 							[
-								$elm$html$Html$Attributes$src(imgProps.srcUrl),
-								A2($elm$html$Html$Attributes$style, 'width', '500px')
+								$elm$html$Html$Attributes$src('images/' + imgProps.srcUrl),
+								A2($elm$html$Html$Attributes$style, 'width', '500px'),
+								A2($elm$html$Html$Attributes$style, 'height', '500px'),
+								A2($elm$html$Html$Attributes$style, 'object-fit', 'cover')
 							]),
 						_List_Nil)
 					]))
@@ -6198,10 +6200,18 @@ var $author$project$Page$Art$imageRender = function (imgProps) {
 };
 var $author$project$Page$Art$imagesToEmbed = _List_fromArray(
 	[
-		{instagramUrl: 'https://www.instagram.com/p/B650oXaAN2B/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', srcUrl: './images/IMG_20200103_175440-01.jpeg'},
-		{instagramUrl: 'https://www.instagram.com/p/B99bx_iHcS7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', srcUrl: './images/IMG_20200320_110742_944.jpg'},
-		{instagramUrl: 'https://www.instagram.com/p/B2t4kl8gQND/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', srcUrl: './images/IMG_20190922_010652.jpg'},
-		{instagramUrl: 'https://www.instagram.com/p/CAN9A1eneYY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', srcUrl: './images/IMG_20200514_200824-01.jpg'}
+		{instagramUrl: 'https://www.instagram.com/p/B650oXaAN2B/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', srcUrl: 'IMG_20200103_175440-01.jpeg'},
+		{instagramUrl: 'https://www.instagram.com/p/B99bx_iHcS7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', srcUrl: 'IMG_20200320_110742_944.jpg'},
+		{instagramUrl: 'https://www.instagram.com/p/B2t4kl8gQND/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', srcUrl: 'IMG_20190922_010652.jpg'},
+		{instagramUrl: 'https://www.instagram.com/p/CAN9A1eneYY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', srcUrl: 'IMG_20200514_200824-01.jpg'},
+		{instagramUrl: 'https://www.instagram.com/p/CAspk61AsLd/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', srcUrl: '100915087_1387528694771680_6282897074976466400_n.jpg'},
+		{instagramUrl: 'https://www.instagram.com/p/CGtB5VmARw3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', srcUrl: '122179190_2060459727417747_5315705912164542481_n.jpg'},
+		{instagramUrl: 'https://www.instagram.com/p/CRjdbSoIkHA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', srcUrl: '221168420_151307497089904_8811148300092393183_n.jpg'},
+		{instagramUrl: 'https://www.instagram.com/p/CYKmr2uJLyI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', srcUrl: '271230318_322973489682028_3146300600334165312_n.jpg'},
+		{instagramUrl: 'https://www.instagram.com/p/Ck1ryBYyiuX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', srcUrl: '315016827_1558959097895589_1308285458764390666_n.jpg'},
+		{instagramUrl: 'https://www.instagram.com/p/Cw-0rOrvROA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', srcUrl: '375777396_827739622060555_1309238847533653786_n.jpg'},
+		{instagramUrl: 'https://www.instagram.com/p/C-xx5PpvGXo/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', srcUrl: '455870402_431854893199396_8464633677940895858_n.jpg'},
+		{instagramUrl: 'https://www.instagram.com/p/C6CQPmryU6t/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', srcUrl: '440121736_444042041330896_5411565750715049654_n.jpg'}
 	]);
 var $author$project$Page$Art$view = function (model) {
 	return A2(
@@ -6529,7 +6539,7 @@ var $author$project$Page$Music$createEmbed = function (url) {
 			$bellroy$elm_embed_youtube$Embed$Youtube$fromString(url)));
 };
 var $author$project$Page$Music$videosToEmbed = _List_fromArray(
-	['WPG8E6i1ETg', 'M0Xw676YueM', 'ep-hHNUR0Ls', 'WmBuwMcmi9A']);
+	['Y1LkX5tLHX0', 'WPG8E6i1ETg', 'M0Xw676YueM', 'ep-hHNUR0Ls', 'WmBuwMcmi9A']);
 var $author$project$Page$Music$videos = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
