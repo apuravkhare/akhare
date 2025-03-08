@@ -241,6 +241,8 @@ view model =
                         [ Social.instagramOutline 20 (RGBA 0.36 0.37 0.38 1) ]
                     , a [ href "https://www.linkedin.com/in/apuravkhare/" ]
                         [ Social.linkedin 20 (RGBA 0.36 0.37 0.38 1) ]
+                    , a [ href "https://www.youtube.com/@ApuravKhare" ]
+                        [ Social.youtube 20 (RGBA 0.36 0.37 0.38 1) ]
                     ]
                 ]
             ]
