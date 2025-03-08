@@ -6189,7 +6189,7 @@ var $author$project$Page$Art$imageRender = function (imgProps) {
 						$elm$html$Html$img,
 						_List_fromArray(
 							[
-								$elm$html$Html$Attributes$src('images/' + imgProps.srcUrl),
+								$elm$html$Html$Attributes$src('https://raw.githubusercontent.com/apuravkhare/akhare/refs/heads/main/images/' + imgProps.srcUrl),
 								A2($elm$html$Html$Attributes$style, 'width', '500px'),
 								A2($elm$html$Html$Attributes$style, 'height', '500px'),
 								A2($elm$html$Html$Attributes$style, 'object-fit', 'cover')

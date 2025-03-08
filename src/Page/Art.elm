@@ -92,7 +92,7 @@ imageRender imgProps =
             [ href imgProps.instagramUrl
             ]
             [ img
-                [ src ("images/" ++ imgProps.srcUrl)
+                [ src ("https://raw.githubusercontent.com/apuravkhare/akhare/refs/heads/main/images/" ++ imgProps.srcUrl)
                 , style "width" "500px"
                 , style "height" "500px"
                 , style "object-fit" "cover"
