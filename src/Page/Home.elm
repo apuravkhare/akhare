@@ -14,9 +14,11 @@ view model =
             , style "background-position" "center"
             , style "background-repeat" "no-repeat"
             ]
-            [ div [ style "margin-top" "80%" ]
-                [ div
-                    [ style "height" "40vh"
+            [ div [ style "display" "flex"
+            , style "flex-direction" "column" ]
+                [ div [style "height" "50vh"] []
+                , div
+                    [ style "height" "50vh"
                     , style "background-color" "rgba(255,255,255,0.8)"
                     , style "white-space" "pre-line"
                     , style "padding" "10px"
