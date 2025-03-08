@@ -6230,23 +6230,86 @@ var $author$project$Page$Art$view = function (model) {
 var $author$project$Page$Home$view = function (model) {
 	return A2(
 		$elm$html$Html$div,
-		_List_Nil,
 		_List_fromArray(
 			[
-				$elm$html$Html$text('home')
+				A2($elm$html$Html$Attributes$style, 'display', 'flex'),
+				A2($elm$html$Html$Attributes$style, 'justify-content', 'center')
+			]),
+		_List_fromArray(
+			[
+				A2(
+				$elm$html$Html$div,
+				_List_fromArray(
+					[
+						A2($elm$html$Html$Attributes$style, 'background-image', 'url(https://raw.githubusercontent.com/apuravkhare/akhare/refs/heads/main/images/D24AE895-8318-4FFA-87F6-03E67CD9A646_1_105_c.jpeg)'),
+						A2($elm$html$Html$Attributes$style, 'background-position', 'center'),
+						A2($elm$html$Html$Attributes$style, 'background-repeat', 'no-repeat')
+					]),
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								A2($elm$html$Html$Attributes$style, 'margin-top', '80%')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$div,
+								_List_fromArray(
+									[
+										A2($elm$html$Html$Attributes$style, 'height', '40vh'),
+										A2($elm$html$Html$Attributes$style, 'background-color', 'rgba(255,255,255,0.8)'),
+										A2($elm$html$Html$Attributes$style, 'white-space', 'pre-line'),
+										A2($elm$html$Html$Attributes$style, 'padding', '10px'),
+										A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
+										A2($elm$html$Html$Attributes$style, 'backdrop-filter', 'blur(5px)')
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Hi, I\'m Apurav! A programmer by profession, and a hobbyist musician and artist.\n\n                    This website is a collection of work that I\'ve done over the years.\n\n                    I am a functional programming nerd and love exploring new programming languages.\n                    This website, for example, is written in '),
+										A2(
+										$elm$html$Html$a,
+										_List_fromArray(
+											[
+												$elm$html$Html$Attributes$href('https://elm-lang.org/'),
+												A2($elm$html$Html$Attributes$style, 'color', 'black')
+											]),
+										_List_fromArray(
+											[
+												$elm$html$Html$text('Elm')
+											])),
+										$elm$html$Html$text('.\n\n                    Immersing myself into my hobbies is how I find peace after a long week.\n                    I like sketching all sorts of things, but mainly people and musicians that inspire me.\n\n                    I play the guitar, bass, and drums.\n                    I geek out on music production and love learning all about DAWs, VSTs, and mixing.\n                    You can find some recordings I\'ve made over the years in the music section!\n                    \n                    I hope you find something you like here.\n\n                    I\'d love to get in touch! Reach out to me on '),
+										A2(
+										$elm$html$Html$a,
+										_List_fromArray(
+											[
+												$elm$html$Html$Attributes$href('https://www.instagram.com/apurav.khare/'),
+												A2($elm$html$Html$Attributes$style, 'color', 'black')
+											]),
+										_List_fromArray(
+											[
+												$elm$html$Html$text('Instagram')
+											])),
+										$elm$html$Html$text(' or '),
+										A2(
+										$elm$html$Html$a,
+										_List_fromArray(
+											[
+												$elm$html$Html$Attributes$href('https://www.linkedin.com/in/apuravkhare/'),
+												A2($elm$html$Html$Attributes$style, 'color', 'black')
+											]),
+										_List_fromArray(
+											[
+												$elm$html$Html$text('LinkedIn')
+											])),
+										$elm$html$Html$text('.')
+									]))
+							]))
+					]))
 			]));
 };
-var $author$project$Page$Music$desc = A2(
-	$elm$html$Html$div,
-	_List_fromArray(
-		[
-			A2($elm$html$Html$Attributes$style, 'margin', '10px'),
-			A2($elm$html$Html$Attributes$style, 'text-align', 'center')
-		]),
-	_List_fromArray(
-		[
-			$elm$html$Html$text('I\'m a hobbyist musician and play the guitar and drums. Immersing myself into my hobbies is how I find peace after a long week. Here are some recordings I\'ve made over the years!')
-		]));
 var $bellroy$elm_embed_youtube$Embed$Youtube$Internal$Youtube$Youtube = F2(
 	function (a, b) {
 		return {$: 'Youtube', a: a, b: b};
@@ -6555,7 +6618,7 @@ var $author$project$Page$Music$view = function (model) {
 		$elm$html$Html$div,
 		_List_Nil,
 		_List_fromArray(
-			[$author$project$Page$Music$desc, $author$project$Page$Music$videos]));
+			[$author$project$Page$Music$videos]));
 };
 var $author$project$Main$renderTab = function (model) {
 	var _v0 = model.page;
@@ -6602,6 +6665,7 @@ var $author$project$Main$viewLink = F3(
 						]))
 				]));
 	});
+var $j_panasiuk$elm_ionicons$Ionicon$Social$youtube = $j_panasiuk$elm_ionicons$Ionicon$Internal$p('M508.6,148.8c0-45-33.1-81.2-74-81.2C379.2,65,322.7,64,265,64c-3,0-6,0-9,0s-6,0-9,0c-57.6,0-114.2,1-169.6,3.6c-40.8,0-73.9,36.4-73.9,81.4C1,184.6-0.1,220.2,0,255.8C-0.1,291.4,1,327,3.4,362.7c0,45,33.1,81.5,73.9,81.5c58.2,2.7,117.9,3.9,178.6,3.8c60.8,0.2,120.3-1,178.6-3.8c40.9,0,74-36.5,74-81.5c2.4-35.7,3.5-71.3,3.4-107C512.1,220.1,511,184.5,508.6,148.8zM207,353.9V157.4l145,98.2L207,353.9z');
 var $author$project$Main$view = function (model) {
 	return {
 		body: _List_fromArray(
@@ -6731,6 +6795,19 @@ var $author$project$Main$view = function (model) {
 											[
 												A2(
 												$j_panasiuk$elm_ionicons$Ionicon$Social$linkedin,
+												20,
+												A4($author$project$Main$RGBA, 0.36, 0.37, 0.38, 1))
+											])),
+										A2(
+										$elm$html$Html$a,
+										_List_fromArray(
+											[
+												$elm$html$Html$Attributes$href('https://www.youtube.com/@ApuravKhare')
+											]),
+										_List_fromArray(
+											[
+												A2(
+												$j_panasiuk$elm_ionicons$Ionicon$Social$youtube,
 												20,
 												A4($author$project$Main$RGBA, 0.36, 0.37, 0.38, 1))
 											]))

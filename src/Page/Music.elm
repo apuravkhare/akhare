@@ -28,20 +28,11 @@ videos =
         (List.map createEmbed videosToEmbed)
 
 
-desc : Html msg
-desc =
-    div
-        [ style "margin" "10px"
-        , style "text-align" "center"
-        ]
-        [ text """I'm a hobbyist musician and play the guitar and drums. Immersing myself into my hobbies is how I find peace after a long week. Here are some recordings I've made over the years!""" ]
-
-
 view : a -> Html msg
 view model =
     div
         []
-        [ desc, videos ]
+        [  videos ]
 
 
 videosToEmbed : List String
