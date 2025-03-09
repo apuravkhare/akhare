@@ -114,7 +114,7 @@ changeUrl : Url.Url -> Model -> ( Model, Cmd Msg )
 changeUrl url model =
     case Url.Parser.parse routeParser url of
         Just answer ->
-            ( { model | page = answer }, Cmd.none )
+            ( { model | page = answer, menu = False }, Cmd.none )
 
         Nothing ->
             ( { model | page = Home }
@@ -128,7 +128,6 @@ update msg model =
         LinkClicked urlRequest ->
             case urlRequest of
                 Browser.Internal url ->
-                    --( model, Nav.pushUrl model.key (Url.toString url) )
                     changeUrl url model
 
                 Browser.External href ->
@@ -232,7 +231,11 @@ view model =
                     , style "color" "red"
                     , style "gap" "5px"
                     ]
-                    [ button [ onClick ToggleMenu ] [ Ios.more 70 (RGBA 0 0 0 1) ]
+                    [ span
+                        [ style "background-color" "rgba(255,255,255,0.5)"
+                        , onClick ToggleMenu
+                        ]
+                        [ Ios.more 70 (RGBA 0 0 0 1) ]
                     ]
                 ]
             , mobileMenu model

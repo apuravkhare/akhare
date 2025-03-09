@@ -23,7 +23,7 @@ personalSite =
 thesis : Html msg
 thesis =
     div
-        [ style "text-align" "right"
+        [ style "text-align" "left"
         ]
         [ div [ style "font-size" "x-large" ] [ text "Revisiting Ad-hoc Polymorphism" ]
         , div [ style "color" "rgba(0,0,0,0.7)" ]
@@ -81,4 +81,4 @@ view model =
 
 
 codeItem child =
-    div [ style "width" "50%" ] [ child ]
+    div [ style "width" "80%" ] [ child ]
