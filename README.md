@@ -6,3 +6,8 @@ The source is written in Elm. To run the application locally, install elm and it
 cd akhare
 elm reactor
 ```
+To compile the site to JS and render in `index.html`:
+```
+elm make src/Main.elm --output elm.js
+elm make src/Mobile.elm --output elm_mobile.js
+```
