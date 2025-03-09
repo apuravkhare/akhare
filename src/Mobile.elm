@@ -160,6 +160,16 @@ theme =
     }
 
 
+separator : Html msg
+separator =
+    hr
+        [ style "width" "80%"
+        , style "color" "white"
+        , style "margin" "0px"
+        ]
+        []
+
+
 mobileMenu : Model -> Html msg
 mobileMenu model =
     if model.menu then
@@ -168,8 +178,11 @@ mobileMenu model =
             , style "display" "block"
             ]
             [ viewLink model Home "/home"
+            , separator
             , viewLink model Code "/code"
+            , separator
             , viewLink model Art "/art"
+            , separator
             , viewLink model Music "/music"
             ]
 
@@ -285,10 +298,10 @@ view model =
 
 viewLink model tab path =
     div
-        [ style "height" "50px"
-        , style "padding" "0.5em"
+        [ style "padding" "0.5em"
         , style "text-align" "center"
         , style "font-size" "30pt"
+        , style "background-color" (getColor MidnightGreen)
         ]
         [ a
             [ href path
@@ -297,7 +310,7 @@ viewLink model tab path =
                     getColor Buff
 
                  else
-                    "black"
+                    "white"
                 )
             , style "text-decoration" "none"
             ]
