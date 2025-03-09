@@ -8,7 +8,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Ionicon
-import Ionicon.Ios as Ios
+import Ionicon.Android as Android
 import Ionicon.Social as Social
 import MobilePage.Art as ArtPage
 import MobilePage.Code as CodePage
@@ -232,10 +232,12 @@ view model =
                     , style "gap" "5px"
                     ]
                     [ span
-                        [ style "background-color" "rgba(255,255,255,0.5)"
-                        , onClick ToggleMenu
+                        [ onClick ToggleMenu
                         ]
-                        [ Ios.more 70 (RGBA 0 0 0 1) ]
+                        [ Android.menu
+                            70
+                            (RGBA 255 255 255 1)
+                        ]
                     ]
                 ]
             , mobileMenu model
@@ -284,7 +286,7 @@ view model =
 viewLink model tab path =
     div
         [ style "height" "50px"
-        , style "padding" "10px"
+        , style "padding" "0.5em"
         , style "text-align" "center"
         , style "font-size" "30pt"
         ]

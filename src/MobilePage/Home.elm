@@ -19,7 +19,7 @@ view model =
                 ]
                 [ div [ style "height" "50vh" ] []
                 , div
-                    [ style "height" "50vh"
+                    [ style "min-height" "50vh"
                     , style "background-color" "rgba(255,255,255,0.8)"
                     , style "white-space" "pre-line"
                     , style "padding" "10px"
